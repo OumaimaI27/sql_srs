@@ -21,6 +21,18 @@ muffin, 3
 
 food_items = pd.read_csv(io.StringIO(csv2))
 
+
+with st.sidebar:
+    option = st.selectbox(
+        "What would you like to review?",
+        ("Joins", "GroupBy" , "Windows Functions"),
+        index = None,
+        placeholder="Select a theme.."
+    )
+
+    st.write('You selected:' , option)
+
+
 answer = '''
 SELECT * FROM beverages
 CROSS JOIN food_items
