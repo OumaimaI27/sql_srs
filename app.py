@@ -21,6 +21,25 @@ muffin, 3
 
 food_items = pd.read_csv(io.StringIO(csv2))
 
+<<<<<<< HEAD
+=======
+# title
+st.write("""
+# SQL SRS
+Spaced Repetition System SQL practice
+""")
+>>>>>>> 555f839 (add sidebar)
+
+with st.sidebar:
+    option = st.selectbox(
+        "What would you like to review",
+        ("Joins", "GroupBy", "Windows Functions"),
+        index=None,
+        placeholder="Select a theme.."
+    )
+
+    st.write('You selected:', option)
+
 answer = '''
 SELECT * FROM beverages
 CROSS JOIN food_items
@@ -35,8 +54,11 @@ if query:
     result = duckdb.sql(query).df()
     st.dataframe(result)
 
+<<<<<<< HEAD
 tab2, tab3 = st.tabs(["Tables", "Solution"])
 
+=======
+>>>>>>> 555f839 (add sidebar)
 with tab2:
     st.write("table: beverages")
     st.dataframe(beverages)
